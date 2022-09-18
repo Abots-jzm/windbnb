@@ -1,0 +1,52 @@
+.photo {
+  border-radius: 2.4rem;
+  overflow: hidden;
+  background-color: red;
+}
+
+.photo img {
+  display: block;
+  height: 26rem;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.5rem 0;
+  height: 4.2rem;
+}
+
+.superHost {
+  border: 2px solid #4f4f4f;
+  border-radius: 100rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+}
+
+.type {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #828282;
+}
+
+.rating {
+  color: #4f4f4f;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.4rem;
+}
+
+.rating span {
+  color: #eb5757;
+  font-size: 1.8rem;
+}
+
+.title {
+  font-weight: 600;
+  color: #333333;
+}

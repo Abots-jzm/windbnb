@@ -1,0 +1,11 @@
+.app {
+  max-width: 120rem;
+  padding: 0 4rem;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    padding: 0 2rem;
+  }
+}

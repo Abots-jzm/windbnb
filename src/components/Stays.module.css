@@ -1,0 +1,7 @@
+.stays {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 3.2rem;
+  row-gap: 5rem;
+  margin-bottom: 10rem;
+}
