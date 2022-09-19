@@ -1,0 +1,30 @@
+.searchOptions {
+  padding: 0;
+  border-right: 1px solid #f2f2f2;
+}
+
+.searchOption {
+  padding: 1rem 3rem;
+}
+
+.selected {
+  color: #333333;
+  border: 1px solid black;
+  border-radius: 16px;
+}
+
+.empty {
+  color: #bdbdbd;
+}
+
+.filled {
+  color: #333333;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  color: #333333;
+}

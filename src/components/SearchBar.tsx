@@ -1,9 +1,13 @@
 import React from "react";
 import classes from "./SearchBar.module.css";
 
-const SearchBar: React.FC = () => {
+type Props = {
+	showPanel: Function;
+};
+
+const SearchBar: React.FC<Props> = (props) => {
 	return (
-		<div className={classes["search-bar"]}>
+		<div className={classes["search-bar"]} onClick={() => props.showPanel()}>
 			<div>Add Location</div>
 			<div>Add guests</div>
 			<div className={classes.search}>

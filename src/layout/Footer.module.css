@@ -1,0 +1,17 @@
+.footer {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #828282;
+  position: absolute;
+  bottom: 2.6rem;
+  left: 0;
+  right: 0;
+}
+
+.footer a,
+.footer a:link,
+.footer a:visited {
+  display: inline;
+  color: black;
+  font-weight: 700;
+}
