@@ -1,43 +1,44 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState } from "react";
 import classes from "./SearchPanel.module.css";
+import Card from "../UI/Card";
 import SearchOption from "./SearchOption";
 import Options from "./Options";
+import SearchButton from "../UI/SearchButton";
 
-const element = document.getElementById("modal-overlay") as HTMLElement;
-
-type Props = {
+type SearchPanelComponentProps = {
 	hidden: boolean;
 	hidePanel: Function;
 };
 
-const SearchPanelComponent: React.FC<Props> = (props) => {
+const SearchPanel: React.FC<SearchPanelComponentProps> = (props) => {
 	const containerClasses = `${classes.container} ${props.hidden && classes.hidden}`;
-	const overlayClasses = `${classes.overlay} ${props.hidden && classes.hidden}`;
+
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+
+	useEffect(() => {
+		window.addEventListener("resize", () => setIsMobile(window.innerWidth < 600));
+
+		return () => {
+			window.removeEventListener("resize", () => setIsMobile(window.innerWidth < 600));
+		};
+	}, []);
 
 	return (
-		<div className={overlayClasses} onClick={() => props.hidePanel()}>
-			<div className={containerClasses}>
-				<div className={classes.layout}>
-					<div className={classes.searchOptions}>
-						<SearchOption selected={true}>Add location</SearchOption>
-						<SearchOption selected={false}>Add guests</SearchOption>
-						<div className={classes.search}>
-							<div className={classes.searchBtn}>
-								<span className="material-symbols-outlined">search</span>
-								Search
-							</div>
-						</div>
-					</div>
-					<Options />
-				</div>
+		<div className={containerClasses}>
+			<button className={classes.cancel} onClick={() => props.hidePanel()}>
+				<span className="material-symbols-outlined">close</span>
+			</button>
+			<div className={classes.layout}>
+				<Card extra={classes.searchOptions} onClick={null}>
+					<SearchOption selected={true}>Add location</SearchOption>
+					<SearchOption selected={false}>Add guests</SearchOption>
+					{!isMobile && <SearchButton hidePanel={props.hidePanel} />}
+				</Card>
+				<Options isMobile={isMobile} />
+				{isMobile && <SearchButton hidePanel={props.hidePanel} />}
 			</div>
 		</div>
 	);
-};
-
-const SearchPanel: React.FC<Props> = (props) => {
-	return ReactDOM.createPortal(<SearchPanelComponent {...props} />, element);
 };
 
 export default SearchPanel;

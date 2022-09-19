@@ -11,6 +11,10 @@ type CounterProps = {
 	mode: number;
 };
 
+type OptionsProps = {
+	isMobile: boolean;
+};
+
 const Counter: React.FC<CounterProps> = (props) => {
 	return (
 		<div>
@@ -30,7 +34,7 @@ STAYS_DATA.map((stay) => {
 	locationSet.add(stay.city);
 });
 
-const Options: React.FC = (props) => {
+const Options: React.FC<OptionsProps> = (props) => {
 	const locations: JSX.Element[] = [];
 	locationSet.forEach((value, index) =>
 		locations.push(
@@ -52,7 +56,7 @@ const Options: React.FC = (props) => {
 					<Counter mode={Mode.CHILDREN} />
 				</div>
 			</div>
-			<div></div>
+			{!props.isMobile && <div></div>}
 		</div>
 	);
 };

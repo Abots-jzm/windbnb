@@ -1,6 +1,7 @@
 .searchOptions {
   padding: 0;
   border-right: 1px solid #f2f2f2;
+  flex: 1;
 }
 
 .searchOption {
@@ -27,4 +28,11 @@
   text-transform: uppercase;
   margin-bottom: 0.4rem;
   color: #333333;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchOptions:first-child {
+    border-bottom: solid 1px #f2f2f2;
+    border-right: none;
+  }
 }

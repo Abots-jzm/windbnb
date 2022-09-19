@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LogoSVG from "../assets/logo.svg";
 import classes from "./Header.module.css";
 import SearchBar from "../components/SearchBar";
-import SearchPanel from "../components/SearchPanel/SearchPanel";
+import SearchPanelModal from "../components/SearchPanel/SearchPanelModal";
 
 const Header: React.FC = () => {
 	const [panelIsHidden, setPanelIsHidden] = useState(true);
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
 				<img src={LogoSVG} alt="Logo" />
 			</div>
 			<SearchBar showPanel={showPanel} />
-			<SearchPanel hidden={panelIsHidden} hidePanel={hidePanel} />
+			<SearchPanelModal hidden={panelIsHidden} hidePanel={hidePanel} />
 		</header>
 	);
 };

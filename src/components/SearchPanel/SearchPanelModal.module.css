@@ -1,0 +1,14 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(79, 79, 79, 0.4);
+  z-index: 100;
+  font-family: 'Mulish', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
