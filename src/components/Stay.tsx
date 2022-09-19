@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Stay.module.css";
 
-type Props = {
+export type DataProps = {
 	superHost: boolean;
 	title: string;
 	rating: number;
@@ -10,7 +10,7 @@ type Props = {
 	photo: string;
 };
 
-const Stay: React.FC<Props> = (props) => {
+const Stay: React.FC<DataProps> = (props) => {
 	let details: string | undefined;
 
 	if (props.beds) details = props.beds === 1 ? " bed" : " beds";

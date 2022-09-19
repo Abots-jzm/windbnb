@@ -4,7 +4,11 @@ import classes from "./Header.module.css";
 import SearchBar from "../components/SearchBar";
 import SearchPanelModal from "../components/SearchPanel/SearchPanelModal";
 
-const Header: React.FC = () => {
+type Props = {
+	onSearch: Function;
+};
+
+const Header: React.FC<Props> = (props) => {
 	const [panelIsHidden, setPanelIsHidden] = useState(true);
 
 	function showPanel() {
@@ -21,7 +25,7 @@ const Header: React.FC = () => {
 				<img src={LogoSVG} alt="Logo" />
 			</div>
 			<SearchBar showPanel={showPanel} />
-			<SearchPanelModal hidden={panelIsHidden} hidePanel={hidePanel} />
+			<SearchPanelModal onSearch={props.onSearch} hidden={panelIsHidden} hidePanel={hidePanel} />
 		</header>
 	);
 };

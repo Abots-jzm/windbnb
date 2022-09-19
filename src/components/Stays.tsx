@@ -1,12 +1,15 @@
 import React from "react";
 import classes from "./Stays.module.css";
-import STAYS_DATA from "../assets/stays.json";
-import Stay from "./Stay";
+import Stay, { DataProps } from "./Stay";
 
-const Stays: React.FC = () => {
+type Props = {
+	data: DataProps[];
+};
+
+const Stays: React.FC<Props> = (props) => {
 	return (
 		<div className={classes.stays}>
-			{STAYS_DATA.map((stay, index) => (
+			{props.data.map((stay, index) => (
 				<Stay {...stay} key={index} />
 			))}
 		</div>

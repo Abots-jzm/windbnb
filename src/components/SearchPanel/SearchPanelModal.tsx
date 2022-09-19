@@ -8,6 +8,7 @@ const element = document.getElementById("modal-overlay") as HTMLElement;
 type SearchPanelComponentProps = {
 	hidden: boolean;
 	hidePanel: Function;
+	onSearch: Function;
 };
 
 type OverlayProps = {
