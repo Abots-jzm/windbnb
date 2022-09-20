@@ -6,10 +6,12 @@
   right: 0;
   background-color: white;
   z-index: 200;
+
+  transition: transform .2s ease-out;
 }
 
 .hidden {
-  display: none;
+  transform: translateY(-100%);
 }
 
 .cancel {

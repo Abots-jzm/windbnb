@@ -1,7 +1,7 @@
 .search-bar {
   align-items: center;
   color: #bdbdbd;
-  
+
   transition: transform .2s;
 }
 
@@ -37,5 +37,11 @@
 
   .search {
     flex-grow: 0;
+  }
+}
+
+@media (hover: hover) {
+  .search-bar {
+    cursor: pointer;
   }
 }

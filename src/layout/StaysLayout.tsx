@@ -13,7 +13,7 @@ const StaysLayout: React.FC<Props> = (props) => {
 			<div className={classes.top}>
 				<div className={classes.title}>Stays in Finland</div>
 				<div className={classes.stays}>
-					{props.data.length || "12+"} {props.data.length === 1 ? "stay" : "stays"}
+					{props.data.length > 12 ? "12+" : props.data.length} {props.data.length === 1 ? "stay" : "stays"}
 				</div>
 			</div>
 			<Stays data={props.data} />

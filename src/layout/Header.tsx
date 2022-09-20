@@ -13,10 +13,12 @@ const Header: React.FC<Props> = (props) => {
 
 	function showPanel() {
 		setPanelIsHidden(false);
+		document.body.style.overflow = "hidden";
 	}
 
 	function hidePanel() {
 		setPanelIsHidden(true);
+		document.body.style.overflow = "auto";
 	}
 
 	return (
