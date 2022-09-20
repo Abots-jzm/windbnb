@@ -27,7 +27,7 @@ const Options: React.FC<Props> = (props) => {
 
 	useEffect(() => {
 		props.fillGuests(noOfAdults + noOfChildren);
-	}, [noOfAdults, noOfChildren]);
+	}, [noOfAdults, noOfChildren, props]);
 
 	const locations: JSX.Element[] = [];
 	locationSet.forEach((value, index) =>
