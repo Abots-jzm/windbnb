@@ -17,7 +17,7 @@ type Props = {
 };
 
 const locationSet: Set<string> = new Set();
-STAYS_DATA.map((stay) => {
+STAYS_DATA.forEach((stay) => {
 	locationSet.add(stay.city);
 });
 
