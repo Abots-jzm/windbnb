@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Stays.module.css";
+// @ts-ignore
 import Stay, { DataProps } from "./Stay";
 
 type Props = {

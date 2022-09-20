@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
 	return (
 		<div className={classes.footer}>
 			Created by{" "}
-			<a href="https://twitter.com/The_Jazzmann?t=CS6W0TjkvvkOUv5ckEiAiQ&s=09" target="_blank">
+			<a href="https://twitter.com/The_Jazzmann?t=CS6W0TjkvvkOUv5ckEiAiQ&s=09" target="_blank" rel="noreferrer">
 				Abots
 			</a>{" "}
 			- devChallenges.io
