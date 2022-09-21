@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 import SearchPanelModal from "../components/SearchPanel/SearchPanelModal";
 
 type Props = {
-	onSearch: Function;
+	onSearch: (location: string, currentGuests: number) => void;
 };
 
 const Header: React.FC<Props> = (props) => {

@@ -9,7 +9,7 @@ export enum SearchOptionsMode {
 type Props = {
 	selected: boolean;
 	children: React.ReactNode;
-	onClick: Function;
+	onClick: () => void;
 	filled: boolean;
 	mode: number;
 };
@@ -19,7 +19,7 @@ const SearchOption: React.FC<Props> = (props) => {
 	const selected = `${classes.searchOption} ${props.selected && classes.selected}`;
 
 	return (
-		<div className={classes.searchOptions} onClick={() => props.onClick()}>
+		<div className={classes.searchOptions} onClick={props.onClick}>
 			<div className={selected}>
 				<div className={classes.title}>{title}</div>
 				<div className={props.filled ? classes.filled : classes.empty}>{props.children}</div>

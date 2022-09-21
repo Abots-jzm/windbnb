@@ -7,8 +7,8 @@ import SearchButton from "../UI/SearchButton";
 
 type Props = {
 	hidden: boolean;
-	hidePanel: Function;
-	onSearch: Function;
+	hidePanel: () => void;
+	onSearch: (location: string, currentGuests: number) => void;
 };
 
 const SearchPanel: React.FC<Props> = (props) => {
@@ -67,7 +67,7 @@ const SearchPanel: React.FC<Props> = (props) => {
 				<span className="material-symbols-outlined">close</span>
 			</button>
 			<div className={classes.layout}>
-				<Card extra={classes.searchOptions} onClick={null}>
+				<Card extra={classes.searchOptions}>
 					<SearchOption mode={SearchOptionsMode.LOCATION} selected={locationIsActive} onClick={showLocation} filled={locationFilled}>
 						{currentLocation}
 					</SearchOption>

@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./SearchButton.module.css";
 
 type Props = {
-	hidePanel: Function;
-	onSearch: Function;
+	hidePanel: () => void;
+	onSearch: () => void;
 };
 
 const SearchButton: React.FC<Props> = (props) => {

@@ -12,8 +12,8 @@ export enum Mode {
 type Props = {
 	isMobile: boolean;
 	locationIsActive: boolean;
-	fillLocation: Function;
-	fillGuests: Function;
+	fillLocation: (location: string) => void;
+	fillGuests: (guests: number) => void;
 };
 
 const locationSet: Set<string> = new Set();
@@ -46,16 +46,16 @@ const Options: React.FC<Props> = (props) => {
 				<div>
 					{!props.locationIsActive && (
 						<div className={classes.guestsOptions}>
-							<Counter number={noOfAdults} fillGuests={setNoOfAdults} mode={Mode.ADULT} />
-							<Counter number={noOfChildren} fillGuests={setNoOfChildren} mode={Mode.CHILDREN} />
+							<Counter currNumber={noOfAdults} fillGuests={setNoOfAdults} mode={Mode.ADULT} />
+							<Counter currNumber={noOfChildren} fillGuests={setNoOfChildren} mode={Mode.CHILDREN} />
 						</div>
 					)}
 				</div>
 			)}
 			{props.isMobile && !props.locationIsActive && (
 				<div className={classes.guestsOptions}>
-					<Counter number={noOfAdults} fillGuests={setNoOfAdults} mode={Mode.ADULT} />
-					<Counter number={noOfChildren} fillGuests={setNoOfChildren} mode={Mode.CHILDREN} />
+					<Counter currNumber={noOfAdults} fillGuests={setNoOfAdults} mode={Mode.ADULT} />
+					<Counter currNumber={noOfChildren} fillGuests={setNoOfChildren} mode={Mode.CHILDREN} />
 				</div>
 			)}
 			{!props.isMobile && <div></div>}

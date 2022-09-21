@@ -3,12 +3,12 @@ import classes from "./SearchBar.module.css";
 import Card from "./UI/Card";
 
 type Props = {
-	showPanel: Function;
+	showPanel: () => void;
 };
 
 const SearchBar: React.FC<Props> = (props) => {
 	return (
-		<Card extra={classes["search-bar"]} onClick={() => props.showPanel()}>
+		<Card extra={classes["search-bar"]} onClick={props.showPanel}>
 			<div>Add Location</div>
 			<div>Add guests</div>
 			<div className={classes.search}>

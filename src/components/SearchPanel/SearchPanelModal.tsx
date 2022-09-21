@@ -7,13 +7,13 @@ const element = document.getElementById("modal-overlay") as HTMLElement;
 
 type SearchPanelComponentProps = {
 	hidden: boolean;
-	hidePanel: Function;
-	onSearch: Function;
+	hidePanel: () => void;
+	onSearch: (location: string, currentGuests: number) => void;
 };
 
 type OverlayProps = {
 	hidden: boolean;
-	hidePanel: Function;
+	hidePanel: () => void;
 };
 
 const Overlay: React.FC<OverlayProps> = (props) => {

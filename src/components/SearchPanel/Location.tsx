@@ -3,7 +3,7 @@ import classes from "./Location.module.css";
 
 type Props = {
 	children: React.ReactNode;
-	fillLocation: Function;
+	fillLocation: (location: string) => void;
 };
 
 const Location: React.FC<Props> = (props) => {
